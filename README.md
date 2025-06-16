@@ -1,4 +1,4 @@
-💻 Tech Stack
+💻 Tech Stack :
     HTML5 + CSS3
     Vanilla JavaScript (ES6+)
     Modular JS Architecture
@@ -6,7 +6,7 @@
     Flatpickr.js (optional date-picker usage)
     Manual DOM manipulation and API integration
 
-🧩 Functional Pages
+🧩 Functional Pages :
     👤 User Pages
     index.html, register.html, login.html, shop.html, cart.html, orders.html, order.html, profile.html, product-details.html
     🛒 Admin Pages
@@ -15,7 +15,7 @@
     utils.js: Common functions (e.g., formatPrice, JWT extraction, session checks)
     Each page has its own corresponding JavaScript for handling dynamic logic, API calls, and DOM events
 
-🎯 Functional Highlights
+🎯 Functional Highlights :
     Dynamic Product Listing with filtering and pagination
     Cart Management: Add, view, and delete items
     Order Placement & Tracking
