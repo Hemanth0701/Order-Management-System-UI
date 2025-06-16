@@ -1,0 +1,81 @@
+/* Container and Heading */
+.container {
+  max-width: 800px;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Form Labels */
+.form-label {
+  font-weight: 600;
+}
+
+/* Price Section */
+#priceSection {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #dee2e6;
+}
+
+.price-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.price-row > div {
+  flex: 1 1 45%;
+}
+
+.remove-price-btn {
+  flex: 0 0 auto;
+  height: 40px;
+  align-self: end;
+}
+
+/* Buttons */
+#addPriceBtn {
+  margin-top: 1rem;
+  display: block;
+}
+
+button[type="submit"] {
+  width: 100%;
+}
+
+/* Toasts */
+#toastContainer {
+  z-index: 2000;
+}
+
+.toast {
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .price-row {
+    flex-direction: column;
+  }
+
+  .price-row > div,
+  .remove-price-btn {
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}

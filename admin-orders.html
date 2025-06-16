@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manage Orders</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Manage All Orders</h2>
+
+    <div class="mb-3 row">
+      <div class="col-md-4">
+        <input type="text" id="search-user" class="form-control" placeholder="Search by user name" />
+      </div>
+      <div class="col-md-4">
+        <select id="filter-status" class="form-select">
+          <option value="">All Statuses</option>
+          <option value="Pending">Pending</option>
+          <option value="Shipped">Shipped</option>
+          <option value="Delivered">Delivered</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="orders-container" class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Order ID</th>
+            <th>User</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="orders-table-body">
+          <!-- Orders will be populated here -->
+        </tbody>
+      </table>
+    </div>
+
+    <nav>
+      <ul class="pagination justify-content-center mt-4" id="pagination">
+        <!-- Pagination will be added here -->
+      </ul>
+    </nav>
+
+    <div id="status-message" class="mt-4 text-center"></div>
+  </div>
+
+  <script>
+    const ORDERS_PER_PAGE = 5;
+    let orders = [];
+    let currentPage = 1;
+
+    function generateFakeOrders(users) {
+      return users.map((user, index) => ({
+        id: index + 1,
+        userName: user.name,
+        status: ["Pending", "Shipped", "Delivered"][Math.floor(Math.random() * 3)]
+      }));
+    }
+
+    async function fetchOrders() {
+      const res = await fetch('https://jsonplaceholder.typicode.com/users');
+      const users = await res.json();
+      orders = generateFakeOrders(users);
+      renderTable();
+      renderPagination();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('orders-table-body');
+      tbody.innerHTML = "";
+
+      const filtered = applyFilters(orders);
+      const start = (currentPage - 1) * ORDERS_PER_PAGE;
+      const paginatedOrders = filtered.slice(start, start + ORDERS_PER_PAGE);
+
+      if (paginatedOrders.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" class="text-center">No orders found</td></tr>';
+        return;
+      }
+
+      for (const order of paginatedOrders) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${order.id}</td>
+          <td>${order.userName}</td>
+          <td>${order.status}</td>
+          <td>
+            <button class="btn btn-sm btn-info" onclick="viewOrder(${order.id})">View</button>
+            <button class="btn btn-sm btn-warning" onclick="updateOrder(${order.id})">Update</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteOrder(${order.id})">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      }
+    }
+
+    function renderPagination() {
+      const pagination = document.getElementById('pagination');
+      pagination.innerHTML = "";
+
+      const filtered = applyFilters(orders);
+      const totalPages = Math.ceil(filtered.length / ORDERS_PER_PAGE);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const li = document.createElement('li');
+        li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+        li.innerHTML = `<button class="page-link" onclick="changePage(${i})">${i}</button>`;
+        pagination.appendChild(li);
+      }
+    }
+
+    function changePage(page) {
+      currentPage = page;
+      renderTable();
+      renderPagination();
+    }
+
+    function viewOrder(id) {
+      alert(`View details for order ID: ${id}`);
+    }
+
+    function updateOrder(id) {
+      alert(`Update order ID: ${id}`);
+    }
+
+    function deleteOrder(id) {
+      if (confirm(`Are you sure you want to delete order ID: ${id}?`)) {
+        orders = orders.filter(order => order.id !== id);
+        currentPage = 1;
+        renderTable();
+        renderPagination();
+        showMessage(`Order ID ${id} deleted successfully`, 'danger');
+      }
+    }
+
+    function showMessage(msg, type = 'info') {
+      const div = document.getElementById('status-message');
+      div.innerHTML = `<div class="alert alert-${type}">${msg}</div>`;
+      setTimeout(() => (div.innerHTML = ""), 3000);
+    }
+
+    function applyFilters(orderList) {
+      const searchValue = document.getElementById('search-user').value.toLowerCase();
+      const statusValue = document.getElementById('filter-status').value;
+
+      return orderList.filter(order => {
+        const matchesName = order.userName.toLowerCase().includes(searchValue);
+        const matchesStatus = statusValue === "" || order.status === statusValue;
+        return matchesName && matchesStatus;
+      });
+    }
+
+    document.getElementById('search-user').addEventListener('input', () => {
+      currentPage = 1;
+      renderTable();
+      renderPagination();
+    });
+
+    document.getElementById('filter-status').addEventListener('change', () => {
+      currentPage = 1;
+      renderTable();
+      renderPagination();
+    });
+
+    // Start
+    fetchOrders();
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#orderDetails {
+  background-color: white;
+  border-radius: 12px;
+}
+
+.order-status {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.item-table {
+  margin-top: 20px;
+}
+
+.item-table th,
+.item-table td {
+  vertical-align: middle;
+}

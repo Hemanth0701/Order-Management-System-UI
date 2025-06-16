@@ -1,0 +1,72 @@
+/* Root settings for consistent sizing */
+:root {
+  --profile-size: 150px;
+  --border-color: #dee2e6;
+  --font-color: #343a40;
+  --muted-color: #6c757d;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --spacing: 1.5rem;
+  --rounded-shape: 1rem;
+}
+
+/* General body styling */
+body {
+  background-color: #f8f9fa;
+  color: var(--font-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Card with soft shadow and spacing */
+.card {
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--rounded-shape);
+}
+
+/* Profile Image */
+.profile-img {
+  width: var(--profile-size);
+  height: var(--profile-size);
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--border-color);
+  background-color: #fff;
+}
+
+/* Header */
+h2 {
+  font-weight: 600;
+  color: #212529;
+}
+
+/* List styling */
+.list-group-item {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 1rem;
+}
+
+/* Responsive fix for small devices */
+@media (max-width: 576px) {
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .d-flex.flex-wrap.gap-2 {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Error message */
+#errorMessage {
+  font-weight: 500;
+}

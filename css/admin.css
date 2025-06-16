@@ -1,0 +1,27 @@
+:root {
+  --primary-color: #343a40;
+  --card-hover-lift: -5px;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #212529;
+}
+
+.card {
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(var(--card-hover-lift));
+}
+
+.nav-link, .btn {
+  font-weight: 500;
+}
+
+#status-message {
+  font-weight: 500;
+  padding: 10px;
+}

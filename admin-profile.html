@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Details | Tenjiku</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+  <main class="container my-5">
+    <h2 class="mb-4 text-center">Your Account</h2>
+
+    <div class="card shadow p-4 rounded-4">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-3 text-center">
+          <img src="assets/default-profile.png" alt="Profile Picture" class="img-fluid rounded-circle profile-img" />
+        </div>
+        <div class="col-md-9">
+          <h4 id="username">Loading...</h4>
+          <p class="text-muted" id="email"></p>
+
+          <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item"><strong>Phone Number:</strong> <span id="phoneNumber"></span></li>
+            <li class="list-group-item"><strong>Date of Birth:</strong> <span id="dob"></span></li>
+            <li class="list-group-item"><strong>Account Created:</strong> <span id="createdAt"></span></li>
+          </ul>
+
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-primary" id="editBtn">Edit Profile</button>
+            <button class="btn btn-danger" id="deleteBtn">Delete Account</button>
+            <a href="admin.html" class="btn btn-outline-dark">Dashboard</a>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="errorMessage" class="alert alert-danger mt-4 d-none" role="alert">
+      Could not load user details. Please try again later.
+    </div>
+  </main>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script type="module" src="js/admin-profile.js"></script>
+</body>
+</html>

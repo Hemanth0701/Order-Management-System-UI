@@ -1,0 +1,78 @@
+/* orders.css */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Heading */
+h2 {
+  font-weight: 600;
+  color: #343a40;
+  text-align: center;
+}
+
+/* Orders List */
+#orders-list .list-group-item {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+#orders-list .list-group-item:hover {
+  transform: scale(1.01);
+}
+
+/* Order Item Content */
+.order-info {
+  font-size: 0.95rem;
+}
+
+.order-date {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+/* Total Badge */
+.order-total {
+  font-weight: 500;
+  color: #28a745;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Pagination */
+.pagination .page-item .page-link {
+  color: #007bff;
+  border-radius: 0.3rem;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+/* Message */
+#message {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Back Button */
+#back-btn {
+  margin-bottom: 2rem;
+  display: inline-block;
+}

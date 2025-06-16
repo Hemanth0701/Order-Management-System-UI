@@ -1,0 +1,130 @@
+/* cart.css - Combined and polished */
+
+/* Base styles */
+body {
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ce8e8e;
+}
+
+/* Headings */
+h1, h2, h4 {
+  font-weight: 700;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+/* Table */
+.table thead th {
+  border-bottom: 2px solid #dee2e6;
+}
+.table tbody tr {
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+.table-hover tbody tr:hover {
+  background-color: #f0f8ff; /* slightly lighter hover */
+}
+.table td, .table th {
+  vertical-align: middle;
+}
+
+/* Product image */
+.product-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Quantity controls */
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.quantity-controls button {
+  background-color: #e9ecef;
+  border: none;
+  padding: 6px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+.quantity-controls button:hover,
+.quantity-controls button:focus {
+  background-color: #adb5bd;
+  outline: none;
+}
+.quantity-controls input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+/* Action buttons */
+.actions button.remove-btn {
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.actions button.remove-btn:hover,
+.actions button.remove-btn:focus {
+  background-color: #bb2d3b;
+  outline: none;
+}
+
+/* Cart messages */
+#cartEmptyMessage {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* Cart summary */
+#cartTotal {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Checkout button */
+#checkoutBtn {
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  #cartTotal {
+    font-size: 1.2rem;
+  }
+  #checkoutBtn {
+    width: 100%;
+  }
+  .table-responsive {
+    overflow-x: auto;
+  }
+  .quantity-controls {
+    flex-direction: row;
+  }
+  .product-image {
+    width: 50px;
+    height: 50px;
+  }
+}

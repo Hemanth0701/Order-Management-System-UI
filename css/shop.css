@@ -1,0 +1,80 @@
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar brand */
+.navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+/* Category filter */
+#shopCategoryFilter {
+  min-width: 150px;
+}
+
+/* Product card */
+.card {
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 240px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Button inside cards */
+.card .btn {
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card .btn:hover {
+  background-color: #212529;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  font-size: 0.875rem;
+  color: #6c757d;
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .navbar .form-select,
+  .navbar input[type="search"] {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

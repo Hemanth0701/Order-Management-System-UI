@@ -1,0 +1,155 @@
+/* Reset some default styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: #222 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #000;
+}
+
+/* Form inputs in navbar */
+.form-select-sm,
+.form-control-sm {
+  border-radius: 0.25rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-select-sm:focus,
+.form-control-sm:focus {
+  border-color: #343a40;
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.25);
+}
+
+/* Buttons */
+.btn-outline-primary {
+  border-color: #343a40;
+  color: #343a40;
+  font-weight: 600;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: #343a40;
+  color: #fff;
+  border-color: #343a40;
+  box-shadow: none;
+}
+
+.btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  background-color: #6c757d;
+  color: #fff;
+  border-color: #6c757d;
+  box-shadow: none;
+}
+
+/* Main container */
+main.container {
+  flex: 1 0 auto; /* Allows footer to stay at bottom */
+}
+
+/* Hero Section */
+#heroHeading {
+  font-weight: 700;
+  color: #212529;
+}
+
+.lead {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.btn-dark {
+  background-color: #212529;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+  background-color: #343a40;
+  box-shadow: none;
+}
+
+/* Hero image */
+section img.img-fluid {
+  max-width: 320px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
+}
+
+/* Featured Products */
+#featuredProductsHeading {
+  font-weight: 600;
+  color: #212529;
+  border-bottom: 2px solid #343a40;
+  padding-bottom: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+#loadingSpinner {
+  margin-bottom: 2rem;
+}
+
+/* Product grid (Bootstrap row) */
+#productGrid {
+  gap: 1.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #f8f9fa;
+  flex-shrink: 0;
+}
+
+footer p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Accessibility improvements */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
