@@ -32,3 +32,5 @@ Detailed Description:
 - Designed responsive and accessible UI pages for login, registration, product browsing, admin controls, and order management.
 - Utilized modern JavaScript (ES6+) features including `fetch`, arrow functions, modular code, and async API handling.
 - Implemented secure API consumption patterns and dynamic content rendering using client-side scripts.
+
+Backend: https://github.com/Hemanth0701/Order-Management-System-Backend-Java-Spring-Boot.git
